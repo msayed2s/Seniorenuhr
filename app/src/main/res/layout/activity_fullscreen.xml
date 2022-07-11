@@ -2,63 +2,166 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/alles"
+    android:id="@+id/analog_alles"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FullscreenActivity">
 
 
     <com.tomerrosenfeld.customanalogclockview.CustomAnalogClock
-        android:id="@+id/analog_time"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:id="@+id/analog_clock"
+        android:layout_width="271dp"
+        android:layout_height="243dp"
 
-        android:gravity="center"
+        android:layout_marginStart="52dp"
+        app:default_watchface="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.429" />
+
+    <TextClock
+        android:id="@+id/analog_time_digital"
+        android:layout_width="0dp"
+        android:layout_height="234dp"
+
+        android:layout_marginStart="72dp"
+
+        android:layout_marginTop="440dp"
         android:padding="50dp"
-        android:text="@string/time"
+
+        android:text="abcdef"
         android:textAlignment="center"
         android:textColor="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textClock"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="96sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextClock
-        android:id="@+id/textClock"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="5dp"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/tag1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/analog_time"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
-        android:id="@+id/tag1"
-        android:layout_width="511dp"
+        android:id="@+id/analog_zeitd"
+        android:layout_width="519dp"
         android:layout_height="0dp"
-
-        android:layout_marginBottom="399dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="558dp"
         android:text="TextView"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toTopOf="@+id/date1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textClock" />
-
-    <TextView
-        android:id="@+id/date1"
-        android:layout_width="511dp"
-        android:layout_height="0dp"
-
-        android:layout_marginEnd="4dp"
-        android:text="TextView"
-        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tag1" />
+        app:layout_constraintStart_toEndOf="@+id/analog_clock"
+        app:layout_constraintTop_toBottomOf="@+id/analog_time_digital" />
+
+
+    <TextView
+        android:id="@+id/analog_day"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="38dp"
+        android:layout_marginBottom="135dp"
+        android:gravity="center_horizontal"
+        android:text="day"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="96sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/termine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/analog_themee"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="49dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/nighty" />
+
+    <ImageView
+        android:id="@+id/analogg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="31dp"
+        android:layout_marginEnd="96dp"
+        android:onClick="digitalSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icondigial" />
+
+
+    <TextView
+        android:id="@+id/analog_date"
+        android:layout_width="520dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="380dp"
+        android:gravity="center_horizontal"
+        android:text="date"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/analog_abschnit"
+        android:layout_width="520dp"
+        android:layout_height="67dp"
+        android:layout_marginBottom="445dp"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textColor="#000000"
+
+
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/analog_day"
+        app:layout_constraintTop_toBottomOf="@+id/analog_day" />
+
+
+    <TextView
+        android:id="@+id/analog_termine"
+        android:layout_width="520dp"
+        android:layout_height="33dp"
+        android:layout_marginBottom="313dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/analog_clock"
+        app:layout_constraintTop_toBottomOf="@+id/analog_day"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/analog_termine2"
+        android:layout_width="520dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="68dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@+id/analog_termine3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/analog_date"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/analog_termine3"
+        android:layout_width="520dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="32dp"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/analog_time_digital"
+        app:layout_constraintTop_toBottomOf="@+id/analog_termine" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

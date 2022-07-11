@@ -36,9 +36,13 @@ public class CalendarContentResolver {
         try {
             if (cursor.getCount() > 0) {
                 while (cursor.moveToNext()) {
-                    String name = cursor.getString(0);
+
                     System.out.println("---------_________-----------");
-                    System.out.println(name);
+                    for (String s : cursor.getColumnNames()) {
+                        System.out.println(s);
+                    }
+                    String name = cursor.getString(0);
+//                    System.out.println(name);
                     System.out.println("---------_________-----------");
                     String displayName = cursor.getString(1);
                     // This is actually a better pattern:
@@ -49,6 +53,7 @@ public class CalendarContentResolver {
             }
         } catch (AssertionError ex) { /*TODO: log exception and bail*/ }
 
+        cursor.close();
         return calendars;
     }
 }

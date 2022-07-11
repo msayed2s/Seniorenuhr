@@ -4,10 +4,24 @@
         android:state_checked="true"
         android:drawable="@drawable/day" />
 
+
     <item
-        android:state_checked="false"
-        android:drawable="@drawable/night"
+        android:src="@drawable/minute"
         />
 
+    <item
+        android:src="@drawable/hour1"
+
+        />
+
+    <item
+        android:src="@drawable/analog"
+
+        />
+
+    <item
+        android:src="@drawable/round"
+
+        />
 
 </selector>

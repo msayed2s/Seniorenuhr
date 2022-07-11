@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -20,34 +22,26 @@ import java.util.List;
 public class MyModel {
 
     private ArrayList<TextView> textViews;
-    private MainActivity activity;
+    private AppCompatActivity activity;
+
+    private MyView myView;
 
     private HashMap<String, View> views;// = new HashMap<>();
     private ArrayList<ImageView> imageViews;
 
 
-    public MyModel(MainActivity activity) {
+    public MyModel(AppCompatActivity activity) {
         this.activity = activity;
         textViews = new ArrayList<>();
         views = new HashMap<>();
         imageViews = new ArrayList<>();
 
-        addView("alles", activity.findViewById(R.id.alles));
-        addImageView("theme", activity.findViewById(R.id.theme));
-
-        addTextView("day", activity.findViewById(R.id.day));
-        addTextView("date", activity.findViewById(R.id.date));
-        addTextView("time", activity.findViewById(R.id.time));
-        addTextView("termine", activity.findViewById(R.id.termine));
-        addTextView("termine2", activity.findViewById(R.id.termine2));
-        addTextView("termine3", activity.findViewById(R.id.termine3));
-        addTextView("abschnitt", activity.findViewById(R.id.abschnitt));
 
     }
 
 
     public List<String> getEvents(Context context, int days) {
-        System.out.println("GET EVENTS METHOD");
+//        System.out.println("GET EVENTS METHOD");
         String[] projection = new String[] { CalendarContract.Events.CALENDAR_ID, CalendarContract.Events.TITLE, CalendarContract.Events.DESCRIPTION, CalendarContract.Events.DTSTART, CalendarContract.Events.DTEND, CalendarContract.Events.ALL_DAY, CalendarContract.Events.EVENT_LOCATION };
         Calendar startTime = Calendar.getInstance();
 
@@ -71,12 +65,23 @@ public class MyModel {
         if (cursor!=null&&cursor.getCount()>0) {
             do {
 
+                System.out.println("---------------------------------");
+
+                for(int i = 0; i < cursor.getColumnNames().length; i++) {
+                    System.out.println(cursor.getColumnNames()[i] + " " + cursor.getString(i));
+                }
+
+                System.out.println("---------------------------------");
+                if(cursor.getString(0).equals("2")) {
+                    continue;
+                }
                 tmp += cursor.getString(1) + ";";
                 tmp += cursor.getString(3) + ";";
                 tmp += cursor.getString(4);
+                System.out.println(cursor.getString(5));
                 events.add(tmp);
                 tmp = "";
-                System.out.println("----------------------------------------------------------");
+//                System.out.println("----------------------------------------------------------");
 
             } while ( cursor.moveToPrevious());
         }
@@ -157,7 +162,7 @@ public class MyModel {
     }
 
     public String getAbschnitt() {
-        return MyModel.getAbschnitt(getNewCalendar().get(Calendar.MINUTE));
+        return MyModel.getAbschnitt(getNewCalendar().get(Calendar.HOUR_OF_DAY));
     }
 
 
@@ -200,8 +205,7 @@ public class MyModel {
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-                myView.setAbschnitt();
-                myView.setEvents();
+                myView.init();
             }
 
             @Override
@@ -210,17 +214,25 @@ public class MyModel {
             }
         });
     }
+
     public void setThemeListener() {
         ImageView img = (ImageView) getView("theme");
+//        System.out.println("SET THEME LISTENER");
+//        System.out.println(img);
         img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                activity.switcher(v);
+                myView.switcher(v);
             }
         });
 
     }
 
+
+
+    public void subscribe(MyView myView) {
+        this.myView = myView;
+    }
 
 
 }
