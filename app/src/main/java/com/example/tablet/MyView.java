@@ -26,12 +26,12 @@ public class MyView extends AppCompatActivity {
 
     final private int light_background = 0xFF2B2B2B;
     final private int light_text = 0xFFFFFFFF;
-    final private int light_icon = R.drawable.sunny;
+    final private int light_icon = R.drawable.dayy;
     private int analog_icon_light = R.drawable.image;
 
     final private int dark_background = 0xFFFFFFFF;
     final private int dark_text = 0xFF000000;
-    final private int dark_icon = R.drawable.nighty;
+    final private int dark_icon = R.drawable.night;
     private int analog_icon_dark = R.drawable.iconanalog;
 
     public void setLightIcon(int icon) {
@@ -102,6 +102,8 @@ public class MyView extends AppCompatActivity {
 
         alles.setBackgroundColor(background);
         theme.setImageDrawable(activity.getResources().getDrawable(themeID));
+//        theme.setScaleX(2);
+//        theme.setScaleY(2);
         analog.setImageDrawable(activity.getResources().getDrawable(analogID));
     }
 

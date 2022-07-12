@@ -5,7 +5,7 @@
     android:id="@+id/analog_alles"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".FullscreenActivity">
+    tools:context=".AnalogActivity">
 
 
     <com.tomerrosenfeld.customanalogclockview.CustomAnalogClock
@@ -25,9 +25,9 @@
         android:layout_width="0dp"
         android:layout_height="234dp"
 
-        android:layout_marginStart="72dp"
+        android:layout_marginStart="16dp"
 
-        android:layout_marginTop="440dp"
+        android:layout_marginTop="548dp"
         android:padding="50dp"
 
         android:text="abcdef"
@@ -59,7 +59,7 @@
         android:layout_marginBottom="135dp"
         android:gravity="center_horizontal"
         android:text="day"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="96sp"
         android:textStyle="bold"
@@ -71,8 +71,8 @@
 
     <ImageView
         android:id="@+id/analog_themee"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="49dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -81,8 +81,8 @@
 
     <ImageView
         android:id="@+id/analogg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="96dp"
         android:onClick="digitalSwitch"
@@ -98,7 +98,7 @@
         android:layout_marginBottom="380dp"
         android:gravity="center_horizontal"
         android:text="date"
-        android:textAlignment="center"
+        android:textAlignment="textStart"
         android:textColor="#000000"
         android:textSize="48sp"
         android:textStyle="bold"
@@ -113,7 +113,6 @@
         android:layout_height="67dp"
         android:layout_marginBottom="445dp"
         android:text="TextView"
-        android:textAlignment="center"
         android:textColor="#000000"
 
 

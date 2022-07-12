@@ -16,11 +16,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Tablet">
         <activity
-            android:name=".FullscreenActivity"
+            android:name=".AnalogActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:exported="false"
             android:label="@string/title_activity_fullscreen"
-            android:theme="@style/Theme.Tablet.Fullscreen" />
+            android:theme="@style/Theme.Tablet.Fullscreen"
+            android:screenOrientation="landscape"/>
         <!-- <activity android:screenOrientation="landscape" android:configChanges="orientation|keyboardHidden" android:name=".MainActivity"> -->
         <activity
             android:name=".MainActivity"

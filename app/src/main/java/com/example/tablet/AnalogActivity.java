@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 //import com.example.tablet.databinding.ActivityFullscreenBinding;
 import com.tomerrosenfeld.customanalogclockview.CustomAnalogClock;
@@ -19,7 +20,7 @@ import java.util.Date;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class FullscreenActivity extends AppCompatActivity {
+public class AnalogActivity extends AppCompatActivity {
 //    TextView mText;
 //    TextView mTag;
 //    TextClock mTime;
@@ -40,6 +41,8 @@ public class FullscreenActivity extends AppCompatActivity {
 //        lightTheme();
 //        setTheme(R.style.WestSide);
         setContentView(R.layout.activity_fullscreen);
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
 //        farbe = MainActivity.farbe;
 
         myModel = new MyModel(this);

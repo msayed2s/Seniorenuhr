@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.WindowManager;
 
 //import com.tomerrosenfeld.*
 
@@ -39,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         myModel = new MyModel(this);
         myView = new MyView(this);
 
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
 
 
         init();
@@ -75,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void analogSwitch(View v) {
 
-        Intent intent = new Intent(this, FullscreenActivity.class);
+        Intent intent = new Intent(this, AnalogActivity.class);
 //        FullscreenActivity.farbe = this.myView.farbe;
         startActivity(intent);
         finish();
@@ -87,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        setContentView(R.layout.activity_fullscreen);
 
-        Intent intent = new Intent(this, FullscreenActivity.class);
+        Intent intent = new Intent(this, AnalogActivity.class);
         startActivity(intent);
 
 //        setContentView(R.layout.activity_fullscreen);
