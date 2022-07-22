@@ -14,7 +14,6 @@
         android:layout_height="243dp"
 
         android:layout_marginStart="52dp"
-        android:layout_marginLeft="52dp"
         app:default_watchface="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +30,7 @@
         android:layout_marginTop="548dp"
         android:padding="70dp"
 
-        android:text="abcdef"
+
         android:textAlignment="center"
         android:textColor="#000000"
         android:textSize="96sp"
@@ -46,7 +45,7 @@
         android:layout_height="0dp"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="558dp"
-        android:text="TextView"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/analog_clock"
@@ -60,7 +59,7 @@
         android:layout_marginTop="38dp"
         android:layout_marginBottom="135dp"
         android:gravity="center_horizontal"
-        android:text="day"
+
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="96sp"
@@ -69,7 +68,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="RtlCompat" />
 
     <ImageView
         android:id="@+id/analog_themee"
@@ -79,6 +79,7 @@
         android:layout_marginEnd="49dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/button"
         app:srcCompat="@drawable/nighty" />
 
     <ImageView
