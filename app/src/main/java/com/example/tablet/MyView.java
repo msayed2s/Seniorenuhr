@@ -76,8 +76,6 @@ public class MyView extends AppCompatActivity {
     }
 
     public void switcher() {
-        System.out.println("\n\n");
-        System.out.println(n + "   " + (n%2) + "   " + (n % 2 == 0));
         if((n % 2) == 0) {
             changeTheme(light_background, light_text, light_icon, analog_icon_light);
         } else {
@@ -91,7 +89,6 @@ public class MyView extends AppCompatActivity {
 
         if(myModel.getTextViews().size() != 0) {
             for (TextView v : myModel.getTextViews()) {
-//                System.out.println(v);
                 v.setTextColor(textColor);
             }
         }
@@ -102,8 +99,6 @@ public class MyView extends AppCompatActivity {
 
         alles.setBackgroundColor(background);
         theme.setImageDrawable(activity.getResources().getDrawable(themeID));
-//        theme.setScaleX(2);
-//        theme.setScaleY(2);
         analog.setImageDrawable(activity.getResources().getDrawable(analogID));
     }
 
@@ -133,6 +128,9 @@ public class MyView extends AppCompatActivity {
             System.out.println("Keine Termine gefunden glaube ich?");
             tmp = "Keine Termine in den nächsten 14 Tagen!";
             termine.setText(tmp);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
