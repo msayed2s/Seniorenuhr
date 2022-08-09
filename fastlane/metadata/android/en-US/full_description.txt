@@ -1,0 +1,1 @@
+A simple calendar app for seniors and people who suffer from Alzheimer's. It was designed for tablets which are at least 8 inches in diameter. It provides a dark mode as well as an analog clock view.
