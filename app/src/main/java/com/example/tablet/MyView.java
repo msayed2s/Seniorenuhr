@@ -2,6 +2,7 @@ package com.example.tablet;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -65,8 +66,7 @@ public class MyView extends AppCompatActivity {
 
     public void switcher(View v) {
         n+=1;
-        System.out.println("\n\n");
-        System.out.println(n + "   " + (n%2) + "   " + (n % 2 == 0));
+
         if((n % 2) == 0) {
             changeTheme(light_background, light_text, light_icon, analog_icon_light);
         } else {
@@ -128,6 +128,8 @@ public class MyView extends AppCompatActivity {
             System.out.println("Keine Termine gefunden glaube ich?");
             tmp = "Keine Termine in den nächsten 14 Tagen!";
             termine.setText(tmp);
+            termine2.setText("");
+            termine3.setText("");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -139,6 +141,7 @@ public class MyView extends AppCompatActivity {
     public void setDay() {
         TextView v = (TextView) myModel.getView("day");
         v.setText(myModel.getDay());
+        v.setGravity(Gravity.CENTER);
     }
 
     public void setDate() {
@@ -149,6 +152,7 @@ public class MyView extends AppCompatActivity {
     public void setAbschnitt() {
         TextView v = (TextView) myModel.getView("abschnitt");
         v.setText(myModel.getAbschnitt());
+
     }
 
     public void subscribe(MyModel myModel) {
@@ -157,5 +161,8 @@ public class MyView extends AppCompatActivity {
         this.myModel.setThemeListener();
     }
 
+    public void update() {
+        init();
+    }
 
 }

@@ -85,6 +85,7 @@ public class MyModel {
 
             } while ( cursor.moveToPrevious());
         }
+        cursor.close();
         return events;
     }
 
@@ -154,11 +155,18 @@ public class MyModel {
     }
 
     public String getDay() {
+
         return getDateDate().split(",")[0].trim();
     }
 
     public String getDate() {
-        return getDateDate().split(",")[1];
+        String s = getDateDate().split(",")[1];
+        try {
+            s += getDateDate().split(",")[2];
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        return s;
     }
 
     public String getAbschnitt() {

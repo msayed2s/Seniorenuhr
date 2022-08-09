@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         init();
-        myView.init();
+        myView.update();
 //        myView.switcher();
 
 
