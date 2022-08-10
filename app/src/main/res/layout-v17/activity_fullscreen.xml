@@ -57,14 +57,13 @@
         android:layout_width="520dp"
         android:layout_height="0dp"
         android:layout_marginTop="38dp"
-        android:layout_marginBottom="135dp"
         android:gravity="center"
 
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="96sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/termine"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -77,9 +76,9 @@
         android:layout_height="48dp"
         android:layout_marginTop="31dp"
         android:layout_marginEnd="49dp"
+        android:contentDescription="@string/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/button"
         app:srcCompat="@drawable/nighty" />
 
     <ImageView
